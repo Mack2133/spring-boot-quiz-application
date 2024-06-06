@@ -17,7 +17,7 @@ This is a Quiz Application built using Spring Boot that allows users to create q
 - Spring Boot
 - Spring Data JPA
 - Hibernate
-- H2 Database (or any preferred database)
+- PostgreSQL
 - Maven
 
 ## Project Structure
@@ -47,7 +47,7 @@ The project is organized into the following packages:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Mack2133/spring-boot-quiz-application.git
+   git clone https://github.com/yourusername/quiz-application.git
    cd quiz-application
    ```
 
@@ -69,19 +69,19 @@ The application runs on `http://localhost:8080`.
 
 - **Get All Questions**
   ```http
-  GET /questions
+  GET /questions/allquestions
   ```
   Fetch all questions from the database.
 
 - **Fetch Questions by Category**
   ```http
-  GET /questions/category/{category}
+  GET /questions/question/{category}
   ```
   Fetch questions based on a specific category.
 
 - **Add Question**
   ```http
-  POST /questions
+  POST /questions/addquestion
   ```
   Add a new question to the database. Request body should contain question details.
 
@@ -113,6 +113,6 @@ The application runs on `http://localhost:8080`.
 
 The application follows the MVC (Model-View-Controller) pattern:
 - **Model**: Contains the entity classes like `Question` and `Quiz`.
-- **Controller**: Handles incoming HTTP requests and returns responses. Example: `QuizController`.
-- **Service**: Contains business logic. Example: `QuizService`.
+- **Controller**: Handles incoming HTTP requests and returns responses. Example: `QuizController` and `QuestionController`.
+- **Service**: Contains business logic. Example: `QuizService` and `QuestionService`.
 - **DAO**: Interfaces for database operations. Example: `QuestionDAO`.
